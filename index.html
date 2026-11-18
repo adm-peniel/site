@@ -436,6 +436,8 @@ p { margin: 0; }
 .eetad-card hr { border: 0; border-top: 1px solid var(--line); margin: 10px 0; width: 100%; }
 .eetad-card .email { font-weight: 700; font-size: 17px; word-break: break-all; }
 .eetad-card .btn { justify-self: start; margin-top: 6px; }
+.email-acoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.eetad-card .email-acoes .btn { margin-top: 0; }
 /* Rodapé */
 .site-footer { background: var(--surface-brand-deep); color: var(--on-brand); }
 .site-footer .wrap { padding-block: 52px 36px; display: grid; gap: 32px; }
@@ -733,8 +735,9 @@ p { margin: 0; }
         <hr>
         <span class="label" style="color: var(--accent-text)">Inscrições</span>
         <p class="body-sm muted">Escreva para a secretaria da subsede:</p>
-        <p class="email">secretariaadmsasp@gmail.com</p>
-        <a class="btn btn-primary" href="mailto:secretariaadmsasp@gmail.com?subject=Inscri%C3%A7%C3%A3o%20na%20EETAD"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Enviar e-mail</a>
+        <p class="email" id="email-secretaria">secretariaadmsasp@gmail.com</p>
+        <div class="email-acoes"><button class="btn btn-primary" type="button" id="copiar-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg> Copiar e-mail</button><a class="btn btn-secondary" href="https://mail.google.com/mail/?view=cm&amp;to=secretariaadmsasp%40gmail.com&amp;su=Inscri%C3%A7%C3%A3o%20na%20EETAD" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Escrever pelo Gmail</a></div>
+        <p class="toast" id="toast-email" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -998,6 +1001,9 @@ p { margin: 0; }
   }
   document.getElementById('copiar').addEventListener('click', function () {
     copia('Rua Bicudo de Brito, 67 - Vila Guarani, São Paulo - SP, CEP 04316-060', document.getElementById('toast'), 'Endereço copiado.', document.getElementById('endereco'));
+  });
+  document.getElementById('copiar-email').addEventListener('click', function () {
+    copia('secretariaadmsasp@gmail.com', document.getElementById('toast-email'), 'E-mail copiado. Cole no seu aplicativo de e-mail.', document.getElementById('email-secretaria'));
   });
   document.getElementById('compartilhar').addEventListener('click', function () {
     copia('Oi! Passando para convidar você para estar com a gente na ADM Peniel. Cultos: Domingo, 18h (Culto da família) · Terça, 19h30 (Oração e ensino) · Quinta, 19h30 (Campanha). Rua Bicudo de Brito, 67, Vila Guarani, São Paulo. Venha como você está. admpeniel.com.br', document.getElementById('toast-convite'), 'Convite copiado. Cole no WhatsApp de quem você quer convidar.', null);
