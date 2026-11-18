@@ -10,6 +10,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0a42a0">
+<meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
 <link rel="canonical" href="https://admpeniel.com.br/">
 <meta property="og:title" content="ADM Peniel · Lugar de encontro com Deus">
 <meta property="og:description" content="Domingo 18h · Terça 19h30 · Quinta 19h30. Rua Bicudo de Brito, 67, Vila Guarani, São Paulo.">
@@ -439,6 +440,7 @@ p { margin: 0; }
 .letreiro { cursor: pointer; }
 .letreiro.pausado .letreiro-faixa { animation-play-state: paused !important; }
 .letreiro:focus-visible { outline: 2px solid var(--flame-gold); outline-offset: -4px; }
+a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-decoration: none !important; font: inherit !important; pointer-events: none; }
 /* Rodapé */
 .site-footer { background: var(--surface-brand-deep); color: var(--on-brand); }
 .site-footer .wrap { padding-block: 52px 36px; display: grid; gap: 32px; }
