@@ -256,8 +256,7 @@ p { margin: 0; }
 .culto-painel { display: grid; grid-template-rows: auto 1fr; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-brand); color: var(--on-brand); box-shadow: var(--shadow-card); position: relative; }
 .culto-painel.proximo-culto { box-shadow: 0 0 0 3px var(--gold), var(--shadow-lifted); }
 .culto-painel .foto { position: relative; aspect-ratio: 4 / 3; max-width: 100%; overflow: hidden; }
-@media (max-width: 900px) { .culto-painel .foto { aspect-ratio: 16 / 9; } }
-.culto-painel .foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.06); transition: opacity 800ms ease, transform 3000ms linear; }
+.culto-painel .foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; opacity: 0; transform: scale(1.06); transition: opacity 800ms ease, transform 3000ms linear; }
 .culto-painel .foto img.ativa { opacity: 1; transform: scale(1); }
 .culto-painel .info { padding: clamp(22px, 3vw, 32px); display: grid; gap: 14px; align-content: start; }
 .culto-painel .quando { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
@@ -539,7 +538,7 @@ p { margin: 0; }
           </div>
         </article>
         <article class="culto-painel" data-dia="2">
-          <div class="foto" data-slides><img src="img/terca-1.webp" srcset="img/terca-1-900.webp 900w, img/terca-1.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmãos acompanhando a Palavra no culto de terça, um deles com a Bíblia aberta no colo." class="ativa" loading="lazy"><img src="img/terca-2.webp" srcset="img/terca-2-900.webp 900w, img/terca-2.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmão lendo a Bíblia sentado no altar." loading="lazy"><img src="img/terca-3.webp" srcset="img/terca-3-900.webp 900w, img/terca-3.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Menina sorrindo com a Bíblia aberta nas mãos." loading="lazy"><img src="img/terca-4.webp" srcset="img/terca-4-900.webp 900w, img/terca-4.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Pastor ministrando o ensino no púlpito." loading="lazy"></div>
+          <div class="foto" data-slides><img style="object-position: 50% 0%" src="img/terca-1.webp" srcset="img/terca-1-900.webp 900w, img/terca-1.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmãos acompanhando a Palavra no culto de terça, um deles com a Bíblia aberta no colo." class="ativa" loading="lazy"><img src="img/terca-2.webp" srcset="img/terca-2-900.webp 900w, img/terca-2.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmão lendo a Bíblia sentado no altar." loading="lazy"><img src="img/terca-3.webp" srcset="img/terca-3-900.webp 900w, img/terca-3.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Menina sorrindo com a Bíblia aberta nas mãos." loading="lazy"><img src="img/terca-4.webp" srcset="img/terca-4-900.webp 900w, img/terca-4.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Pastor ministrando o ensino no púlpito." loading="lazy"></div>
           <div class="info">
             <span class="etiqueta">Oração e ensino</span>
             <div class="quando"><span class="hora">19h30</span><span class="dia">Terça</span></div>
