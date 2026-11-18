@@ -436,6 +436,10 @@ p { margin: 0; }
 .eetad-card hr { border: 0; border-top: 1px solid var(--line); margin: 10px 0; width: 100%; }
 .eetad-card .email { font-weight: 700; font-size: 17px; word-break: break-all; }
 .eetad-card .btn { justify-self: start; margin-top: 6px; }
+.footer-redes { display: flex; flex-wrap: wrap; gap: 10px; }
+.letreiro { cursor: pointer; }
+.letreiro.pausado .letreiro-faixa { animation-play-state: paused !important; }
+.letreiro:focus-visible { outline: 2px solid var(--flame-gold); outline-offset: -4px; }
 /* Rodapé */
 .site-footer { background: var(--surface-brand-deep); color: var(--on-brand); }
 .site-footer .wrap { padding-block: 52px 36px; display: grid; gap: 32px; }
@@ -491,11 +495,11 @@ p { margin: 0; }
 
 <main id="inicio">
   <section class="hero on-dark" aria-labelledby="hero-title">
-    <div class="hero-foto"><img src="img/hero.jpg" alt="" fetchpriority="high"></div>
+    <div class="hero-foto"><img src="img/hero.webp" srcset="img/hero-900.webp 900w, img/hero.webp 1600w" sizes="100vw" alt="" fetchpriority="high"></div>
     <div class="wrap">
       <p class="label eyebrow">Assembleia de Deus – Ministério de Missões<span class="so-desktop"> · Congregação Peniel</span></p>
       <h1 class="display-xl" id="hero-title"><span class="w" style="animation-delay:.05s">Lugar</span> <span class="w" style="animation-delay:.15s">de</span> <span class="w" style="animation-delay:.25s">encontro</span> <span class="w" style="animation-delay:.4s">com</span> <span class="w" style="animation-delay:.5s">Deus</span></h1>
-      <p class="lead">Somos uma congregação dedicada ao ensino fiel à Palavra de Deus. Venha fazer parte da nossa grande família em Cristo!</p>
+      <p class="lead">Somos uma congregação dedicada ao ensino fiel à Palavra de Deus. Vem fazer parte da nossa grande família em Cristo!</p>
       <div class="proximo" aria-live="polite">
         <span class="ponto" aria-hidden="true"></span>
         <span class="txt"><small id="prox-rotulo">Cultos</small><span id="prox-texto">Domingo 18h · Terça 19h30 · Quinta 19h30</span></span>
@@ -510,7 +514,7 @@ p { margin: 0; }
     <svg class="rolar" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </section>
 
-  <div class="letreiro" aria-label="Esperamos você! Vem!">
+  <div class="letreiro" id="letreiro" role="button" tabindex="0" aria-pressed="false" aria-label="Esperamos você! Vem! Toque para pausar a faixa animada">
     <div class="letreiro-faixa" aria-hidden="true">
       <ul><li>Esperamos você!</li><li>Vem!</li><li>Esperamos você!</li><li>Vem!</li><li>Esperamos você!</li><li>Vem!</li></ul>
       <ul><li>Esperamos você!</li><li>Vem!</li><li>Esperamos você!</li><li>Vem!</li><li>Esperamos você!</li><li>Vem!</li></ul>
@@ -527,7 +531,7 @@ p { margin: 0; }
       <div class="semana reveal d1">
         <div class="cultos-grid">
         <article class="culto-painel" data-dia="0">
-          <div class="foto" data-slides><img src="img/domingo-1.jpg" alt="Pastor pregando no púlpito com a Bíblia aberta, ao lado de uma irmã que acompanha a leitura." class="ativa" loading="lazy"><img src="img/domingo-2.jpg" alt="Crianças da congregação apresentando uma encenação bíblica." loading="lazy"><img src="img/domingo-3.jpg" alt="Congregação de pé durante o culto." loading="lazy"></div>
+          <div class="foto" data-slides><img src="img/domingo-1.webp" srcset="img/domingo-1-900.webp 900w, img/domingo-1.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Pastor pregando no púlpito com a Bíblia aberta, ao lado de uma irmã que acompanha a leitura." class="ativa" loading="lazy"><img src="img/domingo-2.webp" srcset="img/domingo-2-900.webp 900w, img/domingo-2.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Crianças da congregação apresentando uma encenação bíblica." loading="lazy"><img src="img/domingo-3.webp" srcset="img/domingo-3-900.webp 900w, img/domingo-3.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Congregação de pé durante o culto." loading="lazy"></div>
           <div class="info">
             <span class="etiqueta">Culto da família</span>
             <div class="quando"><span class="hora">18h</span><span class="dia">Domingo</span></div>
@@ -535,15 +539,15 @@ p { margin: 0; }
           </div>
         </article>
         <article class="culto-painel" data-dia="2">
-          <div class="foto" data-slides><img src="img/terca-1.jpg" alt="Irmãos acompanhando a Palavra no culto de terça, um deles com a Bíblia aberta no colo." class="ativa" loading="lazy"><img src="img/terca-2.jpg" alt="Irmão lendo a Bíblia sentado no altar." loading="lazy"><img src="img/terca-3.jpg" alt="Menina sorrindo com a Bíblia aberta nas mãos." loading="lazy"><img src="img/terca-4.jpg" alt="Pastor ministrando o ensino no púlpito." loading="lazy"></div>
+          <div class="foto" data-slides><img src="img/terca-1.webp" srcset="img/terca-1-900.webp 900w, img/terca-1.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmãos acompanhando a Palavra no culto de terça, um deles com a Bíblia aberta no colo." class="ativa" loading="lazy"><img src="img/terca-2.webp" srcset="img/terca-2-900.webp 900w, img/terca-2.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmão lendo a Bíblia sentado no altar." loading="lazy"><img src="img/terca-3.webp" srcset="img/terca-3-900.webp 900w, img/terca-3.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Menina sorrindo com a Bíblia aberta nas mãos." loading="lazy"><img src="img/terca-4.webp" srcset="img/terca-4-900.webp 900w, img/terca-4.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Pastor ministrando o ensino no púlpito." loading="lazy"></div>
           <div class="info">
             <span class="etiqueta">Oração e ensino</span>
             <div class="quando"><span class="hora">19h30</span><span class="dia">Terça</span></div>
-            <p>Uma noite para orar e aprender juntos. Toda semana temos Ensino Bíblico. Vem aprender mais da Palavra com a gente!</p>
+            <p>Uma noite para orar e aprender juntos. Toda semana temos ensino bíblico. Vem aprender mais da Palavra com a gente!</p>
           </div>
         </article>
         <article class="culto-painel" data-dia="4">
-          <div class="foto" data-slides><img src="img/quinta-1.jpg" alt="Irmão de olhos fechados, em oração, durante a Campanha." class="ativa" loading="lazy"><img src="img/quinta-2.jpg" alt="Louvor na Campanha de quinta: dois irmãos cantando, um ao violão, e uma irmã de mão levantada em adoração." loading="lazy"><img src="img/quinta-3.jpg" alt="Irmãos orando com as mãos estendidas sobre outros irmãos no altar." loading="lazy"><img src="img/quinta-4.jpg" alt="Pregador no púlpito, de braço levantado, ministrando na Campanha." loading="lazy"></div>
+          <div class="foto" data-slides><img src="img/quinta-1.webp" srcset="img/quinta-1-900.webp 900w, img/quinta-1.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmão de olhos fechados, em oração, durante a Campanha." class="ativa" loading="lazy"><img src="img/quinta-2.webp" srcset="img/quinta-2-900.webp 900w, img/quinta-2.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Louvor na Campanha de quinta: dois irmãos cantando, um ao violão, e uma irmã de mão levantada em adoração." loading="lazy"><img src="img/quinta-3.webp" srcset="img/quinta-3-900.webp 900w, img/quinta-3.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Irmãos orando com as mãos estendidas sobre outros irmãos no altar." loading="lazy"><img src="img/quinta-4.webp" srcset="img/quinta-4-900.webp 900w, img/quinta-4.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="Pregador no púlpito, de braço levantado, ministrando na Campanha." loading="lazy"></div>
           <div class="info">
             <span class="etiqueta">Campanha</span>
             <div class="quando"><span class="hora">19h30</span><span class="dia">Quinta</span></div>
@@ -579,7 +583,7 @@ p { margin: 0; }
         <a class="nota-google" href="https://maps.google.com/?cid=11050011844465574052" target="_blank" rel="noopener"><span class="estrelas" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span><strong>5,0</strong> no Google · Ver avaliações</span></a>
       </div>
       <figure class="fachada reveal d1">
-        <img src="img/fachada.jpg" alt="Fachada da ADM Peniel: letreiro azul com a chama nas duas pontas, o nome Assembleia de Deus – Ministério de Missões, Congregação Peniel, e os horários dos cultos." loading="lazy">
+        <img src="img/fachada.webp" srcset="img/fachada-900.webp 900w, img/fachada.webp 1293w" sizes="(max-width: 900px) 100vw, 50vw" alt="Fachada da ADM Peniel: letreiro azul com a chama nas duas pontas, o nome Assembleia de Deus – Ministério de Missões, Congregação Peniel, e os horários dos cultos." loading="lazy">
       </figure>
     </div>
     <div class="wrap chegar-mapa">
@@ -593,8 +597,8 @@ p { margin: 0; }
       <div class="nome-peniel reveal">
         <span class="marca" aria-hidden="true">Face a face</span>
         <div>
-          <p class="label" style="color: var(--accent-text)">Por que ADM Peniel?</p>
-          <h2 class="subheading" id="peniel-title" style="font-size:19px; line-height:30px; font-weight:500">Peniel é o lugar onde Jacó viu a Deus face a face e saiu com a vida mudada. É isso que desejamos para cada pessoa que entra pela nossa porta.</h2>
+          <h2 class="label" id="peniel-title" style="color: var(--accent-text)">Por que ADM Peniel?</h2>
+          <p class="subheading" style="font-size:19px; line-height:30px; font-weight:500">Peniel é o lugar onde Jacó viu a Deus face a face e saiu com a vida mudada. É isso que desejamos para cada pessoa que entra pela nossa porta.</p>
           <div class="verso"><q>E chamou Jacó o nome daquele lugar Peniel, porque dizia: Tenho visto a Deus face a face, e a minha alma foi salva.</q><cite>Gênesis 32.30 (ARC)</cite></div>
         </div>
       </div>
@@ -634,7 +638,7 @@ p { margin: 0; }
       </div>
       <div class="mosaico">
         <a data-ig class="tile grande reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Louvor na ADM Peniel. Ver no Instagram">
-          <img src="img/feed-1.jpg" alt="" loading="lazy">
+          <img src="img/feed-1.webp" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
         <a class="tile arte azul reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Versículo João 8.32. Ver no Instagram">
@@ -642,24 +646,24 @@ p { margin: 0; }
           <span class="r">João 8.32 (ARC)</span>
         </a>
         <a data-ig class="tile reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Pregação da Palavra. Ver no Instagram">
-          <img src="img/feed-2.jpg" alt="" loading="lazy">
+          <img src="img/feed-2.webp" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
         <a data-ig class="tile reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Adoração no culto. Ver no Instagram">
-          <img src="img/feed-3.jpg" alt="" loading="lazy">
+          <img src="img/feed-3.webp" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
         <a class="tile arte ouro reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Culto da família, domingo às 18h. Ver no Instagram">
           <span class="r">Culto da família</span>
           <span class="grande-hora">Domingo, 18h</span>
-          <span class="body-sm">Venha como você está.</span>
+          <span class="body-sm">Vem como você está.</span>
         </a>
         <a data-ig class="tile reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Bíblia aberta no culto. Ver no Instagram">
-          <img src="img/feed-4.jpg" alt="" loading="lazy">
+          <img src="img/feed-4.webp" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
         <a data-ig class="tile reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Congregação reunida. Ver no Instagram">
-          <img src="img/feed-5.jpg" alt="" loading="lazy">
+          <img src="img/feed-5.webp" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
         <a class="tile arte marinho reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Lugar de encontro com Deus. Ver no Instagram">
@@ -667,7 +671,7 @@ p { margin: 0; }
           <span class="r">@admpeniel.sp</span>
         </a>
         <a data-ig class="tile reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Campanha de quinta. Ver no Instagram">
-          <img src="img/quinta-3.jpg" alt="" loading="lazy">
+          <img src="img/quinta-3.webp" srcset="img/quinta-3-900.webp 900w, img/quinta-3.webp 1100w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
       </div>
@@ -690,13 +694,13 @@ p { margin: 0; }
           <p>Pastor da ADM Peniel, na Vila Guarani, São Paulo, com 16 anos de ministério pastoral e experiência na direção de outras congregações. Casado com a missionária Sidinea Santos, cuida da congregação com a sua família.</p>
         </article>
         <article class="pastor reveal d1">
-          <div class="retrato"><img src="img/pr-carlos-renato.jpg" alt="Pr. Carlos Renato e a missionária Eliana Leite" loading="lazy"></div>
+          <div class="retrato"><img src="img/pr-carlos-renato.webp" alt="Pr. Carlos Renato e a missionária Eliana Leite" loading="lazy"></div>
           <span class="cargo">Pastor Setorial · ADMSASP</span>
           <h3 class="heading">Pr. Carlos Renato</h3>
           <p>Fundou a ADMSASP em Santo André em 2004, sob a direção do Pr. Benigno Bianchini. Casado com a missionária Eliana Leite.</p>
         </article>
         <article class="pastor reveal d2">
-          <div class="retrato"><img src="img/pr-benigno.jpg" alt="Pr. Benigno da Cruz Bianchini e a missionária Mariangela Bianchini" loading="lazy"></div>
+          <div class="retrato"><img src="img/pr-benigno.webp" alt="Pr. Benigno da Cruz Bianchini e a missionária Mariangela Bianchini" loading="lazy"></div>
           <span class="cargo">Pastor Presidente · ADIMMREI</span>
           <h3 class="heading">Pr. Benigno da Cruz Bianchini</h3>
           <p>Lidera há décadas a Assembleia de Deus – Ministério de Missões em São João Del Rei (MG). Casado com a missionária Mariangela Bianchini.</p>
@@ -742,7 +746,7 @@ p { margin: 0; }
 
 
   <section class="versiculo-final on-dark" aria-label="Versículo">
-    <img src="img/encontro.jpg" alt="" loading="lazy">
+    <img src="img/encontro.webp" srcset="img/encontro-900.webp 900w, img/encontro.webp 1000w" sizes="100vw" alt="" loading="lazy">
     <div class="wrap">
       <blockquote class="reveal">
         <p>“Alegrei-me quando me disseram: Vamos à Casa do Senhor!”</p>
@@ -760,10 +764,7 @@ p { margin: 0; }
         <span class="fio" aria-hidden="true"></span>
         <span class="txt"><span class="nome">ADM Peniel</span><span class="slogan">Lugar de encontro com Deus</span></span>
       </a>
-      <a class="btn btn-ghost" href="https://www.instagram.com/admpeniel.sp/">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
-        @admpeniel.sp
-      </a>
+      <div class="footer-redes"><a class="btn btn-ghost" href="https://www.instagram.com/admpeniel.sp/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg> Instagram</a><a class="btn btn-ghost" href="https://www.tiktok.com/@admpeniel.sp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.6 2.4 4.5 5 5"/></svg> TikTok</a><a class="btn btn-ghost" href="https://www.facebook.com/admpeniel.sp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V9H7v3.5h2V21h3.5v-8.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg> Facebook</a></div>
     </div>
     <div class="footer-cols">
       <div>
@@ -988,6 +989,12 @@ p { margin: 0; }
     }
   })();
   var ano = document.getElementById('ano'); if (ano) ano.textContent = new Date().getFullYear();
+
+  // Faixa animada: toque ou Enter pausa e retoma
+  var letreiro = document.getElementById('letreiro');
+  function alterna() { var p = letreiro.classList.toggle('pausado'); letreiro.setAttribute('aria-pressed', p ? 'true' : 'false'); }
+  letreiro.addEventListener('click', alterna);
+  letreiro.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); alterna(); } });
 
   // Copiar textos
   function copia(texto, alvo, ok, fallbackEl) {
