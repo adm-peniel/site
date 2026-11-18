@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ADM Peniel</title>
-<meta name="description" content="ADM Peniel, Assembleia de Deus – Ministério de Missões na Vila Guarani, São Paulo. Lugar de encontro com Deus. Cultos: Domingo 18h, Terça 19h30 e Quinta 19h30.">
+<title>ADM Peniel · Assembleia de Deus na Vila Guarani, São Paulo</title>
+<meta name="description" content="ADM Peniel, igreja Assembleia de Deus – Ministério de Missões na Vila Guarani, zona sul de São Paulo. Cultos: Domingo 18h (Culto da família), Terça 19h30 (Oração e ensino) e Quinta 19h30 (Campanha). Rua Bicudo de Brito, 67.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a42a0">
 <link rel="canonical" href="https://admpeniel.com.br/">
 <meta property="og:title" content="ADM Peniel · Lugar de encontro com Deus">
 <meta property="og:description" content="Domingo 18h · Terça 19h30 · Quinta 19h30. Rua Bicudo de Brito, 67, Vila Guarani, São Paulo.">
@@ -15,6 +20,7 @@
 <meta property="og:image:alt" content="Fachada da ADM Peniel, com o letreiro azul e a chama nas duas pontas.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Church", "name": "ADM Peniel", "alternateName": "Assembleia de Deus – Ministério de Missões, Congregação Peniel", "description": "Lugar de encontro com Deus. Congregação da Assembleia de Deus – Ministério de Missões na Vila Guarani, São Paulo.", "url": "https://admpeniel.com.br/", "image": "https://admpeniel.com.br/img/og-fachada.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Rua Bicudo de Brito, 67 – Vila Guarani", "addressLocality": "São Paulo", "addressRegion": "SP", "postalCode": "04316-060", "addressCountry": "BR"}, "geo": {"@type": "GeoCoordinates", "latitude": -23.6390675, "longitude": -46.6376989}, "hasMap": "https://maps.google.com/?cid=11050011844465574052", "sameAs": ["https://www.instagram.com/admpeniel.sp/", "https://www.tiktok.com/@admpeniel.sp"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "18:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Tuesday", "opens": "19:30", "closes": "21:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Thursday", "opens": "19:30", "closes": "21:30"}], "parentOrganization": {"@type": "Church", "name": "Assembleia de Deus – Ministério de Missões em Santo André (ADMSASP)", "url": "https://www.admsasp.com.br/"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap">
@@ -411,6 +417,18 @@ p { margin: 0; }
 .convite .dentro { padding: clamp(32px, 6vw, 72px); display: grid; gap: 16px; max-width: 640px; }
 .convite .muted { color: var(--on-brand-muted); }
 
+@media (max-width: 640px) { .so-desktop { display: none; } .hero .eyebrow { font-size: 12px; letter-spacing: .03em; } }
+.nota-google { display: inline-flex; align-items: center; gap: 10px; justify-self: start; color: var(--ink); text-decoration: none; font-size: 14px; }
+.nota-google:hover span:last-child { text-decoration: underline; }
+.nota-google .estrelas { display: inline-flex; gap: 2px; color: var(--flame-gold); }
+.nota-google .estrelas svg { width: 16px; height: 16px; }
+.eetad { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: center; }
+@media (max-width: 860px) { .eetad { grid-template-columns: 1fr; } }
+.eetad-texto { display: grid; gap: 14px; max-width: 60ch; }
+.eetad-card { gap: 8px; }
+.eetad-card hr { border: 0; border-top: 1px solid var(--line); margin: 10px 0; width: 100%; }
+.eetad-card .email { font-weight: 700; font-size: 17px; word-break: break-all; }
+.eetad-card .btn { justify-self: start; margin-top: 6px; }
 /* Rodapé */
 .site-footer { background: var(--surface-brand-deep); color: var(--on-brand); }
 .site-footer .wrap { padding-block: 52px 36px; display: grid; gap: 32px; }
@@ -446,19 +464,19 @@ p { margin: 0; }
 <body>
 <header class="site-header" id="topo">
   <div class="wrap">
-    <a class="assinatura" href="#inicio" aria-label="ADM Peniel, Lugar de encontro com Deus">
+    <a class="assinatura" href="#inicio" aria-label="ADM Peniel, início">
       <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNzQuOSIgaGVpZ2h0PSI3NDUuNyIgdmlld0JveD0iLTEzLjkgLTEzLjggMzc0LjkgNzQ1LjciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQ2hhbWEg4oCTIENvbmdyZWdhw6fDo28gUGVuaWVsIj4KPHRpdGxlPkNoYW1hIOKAkyBDb25ncmVnYcOnw6NvIFBlbmllbDwvdGl0bGU+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9Imd2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjI4OC43IiB5MT0iMzY5LjYiIHgyPSI2NC44IiB5Mj0iMjU5LjgiPjxzdG9wIG9mZnNldD0iMC4wMCIgc3RvcC1jb2xvcj0iI2JlMDcxOSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4xNyIgc3RvcC1jb2xvcj0iI2NhMDkxYyI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4zMyIgc3RvcC1jb2xvcj0iI2QxMGIxYiI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC41MCIgc3RvcC1jb2xvcj0iI2RjMTgxNyI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC42NyIgc3RvcC1jb2xvcj0iI2U0MjUxNSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC44MyIgc3RvcC1jb2xvcj0iI2VlMzYxNCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMS4wMCIgc3RvcC1jb2xvcj0iI2Y3NDQxMyI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ28iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTU5LjgiIHkxPSI0OTIuOCIgeDI9IjMwMi4wIiB5Mj0iNTU2LjciPjxzdG9wIG9mZnNldD0iMC4wMCIgc3RvcC1jb2xvcj0iI2Y5NzEwOSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4xNyIgc3RvcC1jb2xvcj0iI2ZhNzQwYSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4zMyIgc3RvcC1jb2xvcj0iI2ZhN2YwOSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC41MCIgc3RvcC1jb2xvcj0iI2ZiOTIwOCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC42NyIgc3RvcC1jb2xvcj0iI2ZkYTAwOCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC44MyIgc3RvcC1jb2xvcj0iI2ZlYWYwYSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMS4wMCIgc3RvcC1jb2xvcj0iI2ZlYmEwYSI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0ic2YiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTAzLjYiIHkxPSI2MS4yIiB4Mj0iMTQ5LjUiIHkyPSI3My4xIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNkODA3MTciPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjAuMSIgc3RvcC1jb2xvcj0iI2QyMDgxOCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4zNyIgc3RvcC1jb2xvcj0iI2M2MDgxNiI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC42NiIgc3RvcC1jb2xvcj0iI2I1MDYxNCI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC45NCIgc3RvcC1jb2xvcj0iI2FjMDQxMSI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2FjMDQxMSI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0ic2MiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjUxLjEiIHkxPSI2NzUuMyIgeDI9IjMxNi4wIiB5Mj0iNjk0LjMiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzhiM2QxMiI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC4xIiBzdG9wLWNvbG9yPSIjOGEzZTEyIj48L3N0b3A+PHN0b3Agb2Zmc2V0PSIwLjIiIHN0b3AtY29sb3I9IiM5ODQ0MTQiPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjAuMyIgc3RvcC1jb2xvcj0iI2EyNGIxMyI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC40IiBzdG9wLWNvbG9yPSIjYWU1MDE0Ij48L3N0b3A+PHN0b3Agb2Zmc2V0PSIwLjUiIHN0b3AtY29sb3I9IiNiODU0MTMiPjwvc3RvcD48c3RvcCBvZmZzZXQ9IjAuNiIgc3RvcC1jb2xvcj0iI2JhNTUxMyI+PC9zdG9wPjxzdG9wIG9mZnNldD0iMC44IiBzdG9wLWNvbG9yPSIjYmI1NjE1Ij48L3N0b3A+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYmQ1ODE2Ij48L3N0b3A+PC9saW5lYXJHcmFkaWVudD4KPGNsaXBQYXRoIGlkPSJjciI+PHBhdGggZD0iTTEyMC4xNyAxNDcuMzQgQzExMC43OSAxMzcuMDUgOTYuNTkgMTMyLjQ2IDgyLjY0IDEyNy42OCBDNzUuNjcgMTI1LjMwIDY4Ljc3IDEyMi44NiA2NC40NCAxMTguNDUgQzYwLjEyIDExNC4wNiA1OC4zNiAxMDcuNzAgNTcuNzYgMTAxLjE4IEM1NS4zMyA3NS4wNiA3MS40MCA0Ni4zNSA5MS4zMSAyNi4zMCBDMTAxLjI3IDE2LjI4IDExMi4xOSA4LjQyIDEyNS42NiAzLjU4IEMxMzIuMzkgMS4xNiAxMzkuNzUgLTAuNTAgMTQ2LjMxIDAuNTYgQzE1Mi44NyAxLjYyIDE1OC42MiA1LjQwIDE2NC4zMSA5LjM3IEMxODYuNjMgMjQuOTcgMjA3LjgwIDQzLjQyIDIyNy4zNCA2My4wNiBDMjY3LjEyIDEwMy4wNiAzMDAuMTMgMTQ3Ljk2IDMyMi44NCAxOTkuOTggQzM0NS4zMyAyNTEuNTIgMzU3LjczIDMxMC4wNiAzMzQuNjQgMzYwLjI0IEMzMDguNjkgMzEzLjY2IDI3OS4wMiAyNTkuMTMgMjI4LjA5IDIzMy44OSBDMjE4LjA1IDI3Ni4yMiAxOTcuOTUgMzEyLjc5IDE3NC44MyAzNDkuMDkgQzE1MS45NyAzODQuOTcgMTI2LjE1IDQyMC41OSAxMTMuMTcgNDU5Ljk4IEMxMDAuMDQgNDk5LjgzIDEwMC4wNiA1NDMuNTMgMTEzLjIyIDU4NC4yNCBDMTI2LjIyIDYyNC40NiAxNTIuMDQgNjYxLjc1IDE3Ni40NyA2OTMuMDcgQzEyNi40MSA2NzQuMTggODcuNjUgNjM1LjU4IDU3LjA5IDU5MC4wMyBDMjYuODEgNTQ0Ljg5IDQuNTkgNDkyLjkzIDAuNzEgNDQwLjIzIEMtMy4yMSAzODcuMDQgMTEuNTYgMzMzLjExIDM3LjMxIDI4NS4xNSBDNjIuODIgMjM3LjY0IDk5LjExIDE5Ni4wMCAxMjAuMTcgMTQ3LjM0WiI+PC9wYXRoPjwvY2xpcFBhdGg+CjxjbGlwUGF0aCBpZD0iY28iPjxwYXRoIGQ9Ik0xMzYuMjcgNDc5Ljc2IEMxNTIuMTIgNTExLjM1IDE3MS40OCA1NDguMjIgMjA1LjEzIDU2NS4zOSBDMjE4Ljk5IDUxNi43MiAyNjEuMjUgNDc1LjMzIDI3NC41NyA0MjYuMjcgQzI4MS4yOSA0MDEuNTEgMjgwLjY0IDM3NC44MCAyNzMuMjMgMzQ5LjQ4IEMyNjUuOTcgMzI0LjY3IDI1Mi4yMSAzMDEuMjEgMjM4LjgyIDI4MS40MCBDMjkxLjAwIDMxMy4wNiAzMzIuODggMzc1Ljc2IDMzOS45NSA0MzkuNTggQzM0My40NSA0NzEuMjQgMzM4LjM5IDUwMy4xOCAzMjUuMTQgNTMyLjQyIEMzMTEuOTAgNTYxLjY2IDI5MC40NyA1ODguMjEgMjc2LjA4IDYxNS42MCBDMjg5Ljg1IDYyNy4yNiAzMDguNDYgNjMxLjA4IDMyNS4xMyA2MzYuODcgQzMyOC42NiA2NjYuNzcgMzAzLjY1IDcwOS45NyAyNzIuODIgNzE2Ljk3IEMyNjUuMTIgNzE4LjcyIDI1Ny4wNSA3MTguMjAgMjQ5LjU0IDcxNS4wMyBDMjQyLjAzIDcxMS44NiAyMzUuMDggNzA2LjAzIDIyOC40NSA3MDAuMjYgQzIxNS4xOSA2ODguNzIgMjAzLjIwIDY3Ny40MiAxOTEuODQgNjY0Ljg2IEMxNDYuNzMgNjE1LjAzIDExMS40MSA1NDUuNTMgMTM2LjI3IDQ3OS43NloiPjwvcGF0aD48L2NsaXBQYXRoPgo8L2RlZnM+CjxwYXRoIGQ9Ik04MS43MCAxNDEuMTAgQzEwNS4yNyAxNTMuNTkgOTMuNDkgMTczLjI4IDgxLjk1IDE5MS4wMiBDNzAuNjQgMjA4LjQxIDU5LjU3IDIyMy45MyA0OS4wNSAyNDAuMTcgQzI3Ljc5IDI3My4wMCA4LjgwIDMwOC43OCAtMi4wOSAzNDYuOTcgQy0xMi45OCAzODUuMTYgLTE1Ljc4IDQyNS43NiAtOS4zOCA0NjQuNzEgQy0yLjk5IDUwMy42NyAxMi41OSA1NDAuOTcgMzIuNTggNTc1LjM2IEM1Mi41OCA2MDkuNzQgNzYuOTggNjQxLjE5IDEwNy4zOCA2NjYuODMgQzExNS4wNiA2NzMuMzEgMTIzLjEyIDY3OS40MSAxMzEuNTQgNjg0LjgzIEMxMzkuOTYgNjkwLjI0IDE0OC43NSA2OTQuOTcgMTU3Ljc4IDY5OS42NiBDMTYyLjQ4IDcwMi4xMCAxNjcuMjUgNzA0LjUyIDE3Mi4xMyA3MDQuODcgQzE3Ni42NCA3MDUuMTkgMTgxLjI1IDcwMy43NSAxODUuOTMgNzAyLjAxIEMxOTAuNjEgNzAwLjI4IDE5NS4zNSA2OTguMjUgMTk5LjU0IDY5OC41MCBDMjAzLjcyIDY5OC43NiAyMDcuMzQgNzAxLjMwIDIxMS4xMCA3MDQuMDQgQzIyNi43NyA3MTUuNDYgMjQ0LjkwIDczMC40NSAyNjMuODAgNzMxLjIyIEMyODIuMzEgNzMxLjk3IDMwMS41NiA3MTkuMDggMzE0LjYyIDcwNC4wMSBDMzI3LjY3IDY4OC45NCAzMzQuNTMgNjcxLjY5IDMzNy44MiA2NTEuMTcgQzMzOC42OSA2NDUuNzIgMzM5LjMxIDY0MC4wNSAzMzguMDIgNjM1LjQ4IEMzMzYuODMgNjMxLjI3IDMzNC4wMSA2MjguMDAgMzMwLjAwIDYyNS42MyBDMzI2LjAwIDYyMy4yNyAzMjAuODEgNjIxLjgxIDMxNi4yMCA2MTkuNDYgQzMxMS42MCA2MTcuMTEgMzA3LjU3IDYxMy44OCAzMDUuNTcgNjEwLjA4IEMzMDEuNDAgNjAyLjE0IDMwNi4wMCA1OTEuNzEgMzExLjE0IDU4Mi41NyBDMzE2LjI4IDU3My40MiAzMjEuOTggNTY1LjU2IDMyNy4wNSA1NTcuMTIgQzMzNi45OSA1NDAuNTggMzQ0LjU2IDUyMS44MyAzNDguOTcgNTAyLjY1IEMzNTMuNDggNDgzLjA5IDM1NC43MSA0NjMuMDggMzUzLjQyIDQ0My4xNCBDMzUyLjc3IDQzMy4xNyAzNTEuNDkgNDIzLjIyIDM0OC41OCA0MTMuNDYgQzM0NS43OCA0MDQuMDggMzQxLjQ2IDM5NC44OCAzNDAuOTEgMzg1Ljc1IEMzNDAuNjAgMzgwLjgxIDM0MS40MCAzNzUuODkgMzQzLjE1IDM3MS4xMCBDMzQ0Ljc3IDM2Ni42OSAzNDcuMjAgMzYyLjM5IDM0OS4yNSAzNTcuOTkgQzM1My41MyAzNDguODEgMzU2LjE4IDMzOS4xNiAzNTcuODIgMzI5LjMyIEMzNjEuMDMgMzEwLjAyIDM2MC4zOCAyODkuOTYgMzU3LjQ4IDI3MC41MSBDMzUxLjY4IDIzMS42MCAzMzYuOTAgMTk1LjExIDMxNy43NyAxNjAuNjQgQzI5OC40NSAxMjUuODIgMjc0LjY3IDkzLjA2IDI0Ny40NSA2NS4xMCBDMjMzLjcwIDUwLjk3IDIxOS4wNyAzOC4wNyAyMDMuOTIgMjMuOTYgQzE4OS4wNyAxMC4xNCAxNzMuNzIgLTQuODQgMTU1LjcwIC05LjYzIEMxMzcuMzEgLTE0LjUwIDExNi4xNSAtOC43NiA5OS4zMSAyLjEyIEM4Mi44MiAxMi43OSA3MC40OCAyOC40MSA2MC4zMyA0NS43MSBDNTAuMTkgNjMuMDEgNDIuMjMgODEuOTkgNDQuNjcgMTAxLjEyIEM0Ny4xMSAxMjAuMjUgNTkuOTUgMTM5LjUzIDgxLjcwIDE0MS4xMFoiIGZpbGw9IiNGRkZGRkYiPjwvcGF0aD4KCjxwYXRoIGQ9Ik0xMjAuMTcgMTQ3LjM0IEMxMTAuNzkgMTM3LjA1IDk2LjU5IDEzMi40NiA4Mi42NCAxMjcuNjggQzc1LjY3IDEyNS4zMCA2OC43NyAxMjIuODYgNjQuNDQgMTE4LjQ1IEM2MC4xMiAxMTQuMDYgNTguMzYgMTA3LjcwIDU3Ljc2IDEwMS4xOCBDNTUuMzMgNzUuMDYgNzEuNDAgNDYuMzUgOTEuMzEgMjYuMzAgQzEwMS4yNyAxNi4yOCAxMTIuMTkgOC40MiAxMjUuNjYgMy41OCBDMTMyLjM5IDEuMTYgMTM5Ljc1IC0wLjUwIDE0Ni4zMSAwLjU2IEMxNTIuODcgMS42MiAxNTguNjIgNS40MCAxNjQuMzEgOS4zNyBDMTg2LjYzIDI0Ljk3IDIwNy44MCA0My40MiAyMjcuMzQgNjMuMDYgQzI2Ny4xMiAxMDMuMDYgMzAwLjEzIDE0Ny45NiAzMjIuODQgMTk5Ljk4IEMzNDUuMzMgMjUxLjUyIDM1Ny43MyAzMTAuMDYgMzM0LjY0IDM2MC4yNCBDMzA4LjY5IDMxMy42NiAyNzkuMDIgMjU5LjEzIDIyOC4wOSAyMzMuODkgQzIxOC4wNSAyNzYuMjIgMTk3Ljk1IDMxMi43OSAxNzQuODMgMzQ5LjA5IEMxNTEuOTcgMzg0Ljk3IDEyNi4xNSA0MjAuNTkgMTEzLjE3IDQ1OS45OCBDMTAwLjA0IDQ5OS44MyAxMDAuMDYgNTQzLjUzIDExMy4yMiA1ODQuMjQgQzEyNi4yMiA2MjQuNDYgMTUyLjA0IDY2MS43NSAxNzYuNDcgNjkzLjA3IEMxMjYuNDEgNjc0LjE4IDg3LjY1IDYzNS41OCA1Ny4wOSA1OTAuMDMgQzI2LjgxIDU0NC44OSA0LjU5IDQ5Mi45MyAwLjcxIDQ0MC4yMyBDLTMuMjEgMzg3LjA0IDExLjU2IDMzMy4xMSAzNy4zMSAyODUuMTUgQzYyLjgyIDIzNy42NCA5OS4xMSAxOTYuMDAgMTIwLjE3IDE0Ny4zNFoiIGZpbGw9InVybCgjZ3YpIj48L3BhdGg+CjxnIGNsaXAtcGF0aD0idXJsKCNjcikiPjxwYXRoIGQ9Ik0xNjIuNTggNC4wNiBDMTU4LjEyIDUzLjc4IDE0My4wMSAxMDIuMTcgMTIwLjk4IDE0Ni44NCBMLTc2LjQ3IDU2LjE3IEwtNzYuNDcgLTM1LjE5IEwxNjQuNDQgLTM1LjE5WiIgZmlsbD0idXJsKCNzZikiPjwvcGF0aD48L2c+CjxwYXRoIGQ9Ik0xMzYuMjcgNDc5Ljc2IEMxNTIuMTIgNTExLjM1IDE3MS40OCA1NDguMjIgMjA1LjEzIDU2NS4zOSBDMjE4Ljk5IDUxNi43MiAyNjEuMjUgNDc1LjMzIDI3NC41NyA0MjYuMjcgQzI4MS4yOSA0MDEuNTEgMjgwLjY0IDM3NC44MCAyNzMuMjMgMzQ5LjQ4IEMyNjUuOTcgMzI0LjY3IDI1Mi4yMSAzMDEuMjEgMjM4LjgyIDI4MS40MCBDMjkxLjAwIDMxMy4wNiAzMzIuODggMzc1Ljc2IDMzOS45NSA0MzkuNTggQzM0My40NSA0NzEuMjQgMzM4LjM5IDUwMy4xOCAzMjUuMTQgNTMyLjQyIEMzMTEuOTAgNTYxLjY2IDI5MC40NyA1ODguMjEgMjc2LjA4IDYxNS42MCBDMjg5Ljg1IDYyNy4yNiAzMDguNDYgNjMxLjA4IDMyNS4xMyA2MzYuODcgQzMyOC42NiA2NjYuNzcgMzAzLjY1IDcwOS45NyAyNzIuODIgNzE2Ljk3IEMyNjUuMTIgNzE4LjcyIDI1Ny4wNSA3MTguMjAgMjQ5LjU0IDcxNS4wMyBDMjQyLjAzIDcxMS44NiAyMzUuMDggNzA2LjAzIDIyOC40NSA3MDAuMjYgQzIxNS4xOSA2ODguNzIgMjAzLjIwIDY3Ny40MiAxOTEuODQgNjY0Ljg2IEMxNDYuNzMgNjE1LjAzIDExMS40MSA1NDUuNTMgMTM2LjI3IDQ3OS43NloiIGZpbGw9InVybCgjZ28pIj48L3BhdGg+CjxnIGNsaXAtcGF0aD0idXJsKCNjbykiPjxwYXRoIGQ9Ik0yNzUuNDEgNjE2LjQ3IEwyNzUuOTQgNjE0LjQ0IEMyNTUuNjkgNjQ4LjQ5IDI0My41MCA2ODguMjUgMjQ2LjQ5IDcyOC4xMiBMMzYzLjM4IDczNi4yNCBMMzYzLjM4IDY0MC4xNVoiIGZpbGw9InVybCgjc2MpIj48L3BhdGg+PC9nPgo8L3N2Zz4=" alt="">
       <span class="fio" aria-hidden="true"></span>
-      <span class="txt"><span class="nome">ADM Peniel</span><span class="slogan">Lugar de encontro com Deus</span></span>
+      <span class="txt"><span class="nome">ADM Peniel</span></span>
     </a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu
     </button>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#cultos">Cultos</a>
-      <a href="#ensino">Ensino</a>
       <a href="#redes">Redes</a>
       <a href="#familia">Liderança</a>
+      <a href="#eetad">EETAD</a>
       <a class="btn btn-primary" href="#como-chegar">Como chegar</a>
     </nav>
   </div>
@@ -468,7 +486,7 @@ p { margin: 0; }
   <section class="hero on-dark" aria-labelledby="hero-title">
     <div class="hero-foto"><img src="img/hero.jpg" alt="" fetchpriority="high"></div>
     <div class="wrap">
-      <p class="label eyebrow">Assembleia de Deus – Ministério de Missões · Congregação Peniel</p>
+      <p class="label eyebrow">Assembleia de Deus – Ministério de Missões<span class="so-desktop"> · Congregação Peniel</span></p>
       <h1 class="display-xl" id="hero-title"><span class="w" style="animation-delay:.05s">Lugar</span> <span class="w" style="animation-delay:.15s">de</span> <span class="w" style="animation-delay:.25s">encontro</span> <span class="w" style="animation-delay:.4s">com</span> <span class="w" style="animation-delay:.5s">Deus</span></h1>
       <p class="lead">Somos uma congregação dedicada ao ensino fiel à Palavra de Deus. Venha fazer parte da nossa grande família em Cristo!</p>
       <div class="proximo" aria-live="polite">
@@ -549,6 +567,7 @@ p { margin: 0; }
           <button class="btn btn-secondary" id="copiar" type="button">Copiar endereço</button>
         </div>
         <p class="toast" id="toast" role="status" aria-live="polite"></p>
+        <a class="nota-google" href="https://maps.google.com/?cid=11050011844465574052" target="_blank" rel="noopener"><span class="estrelas" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg></span><span><strong>5,0</strong> no Google · Ver avaliações</span></a>
       </div>
       <figure class="fachada reveal d1">
         <img src="img/fachada.jpg" alt="Fachada da ADM Peniel: letreiro azul com a chama nas duas pontas, o nome Assembleia de Deus – Ministério de Missões, Congregação Peniel, e os horários dos cultos." loading="lazy">
@@ -569,29 +588,6 @@ p { margin: 0; }
           <h2 class="subheading" id="peniel-title" style="font-size:19px; line-height:30px; font-weight:500">Peniel é o lugar onde Jacó viu a Deus face a face e saiu com a vida mudada. É isso que desejamos para cada pessoa que entra pela nossa porta.</h2>
           <div class="verso"><q>E chamou Jacó o nome daquele lugar Peniel, porque dizia: Tenho visto a Deus face a face, e a minha alma foi salva.</q><cite>Gênesis 32.30 (ARC)</cite></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section sunken" id="ensino" aria-labelledby="ensino-title">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="label">Ensino</p>
-        <h2 class="display-lg" id="ensino-title">Conhecer a verdade faz diferença</h2>
-        <p class="muted">O ensino da Palavra é o foco da ADM Peniel. Venha aprender conosco, do primeiro passo na fé até a formação teológica.</p>
-      </div>
-      <div class="ensino-grid">
-        <article class="card reveal">
-          <span class="label" style="color: var(--accent-text)">Terça, 19h30 · Na ADM Peniel</span>
-          <h3 class="heading">Oração e ensino</h3>
-          <p class="muted">Estudo da Bíblia e oração, aberto a todos. Um bom lugar para começar, mesmo que você nunca tenha estudado as Escrituras.</p>
-        </article>
-        <article class="card reveal d1">
-          <span class="label" style="color: var(--accent-text)">Sexta, 19h30 · Na sede, em Santo André</span>
-          <h3 class="heading">Teologia EETAD</h3>
-          <p class="muted">A ADMSASP é um núcleo ativo da EETAD (Escola de Educação Teológica das Assembleias de Deus), com cursos do Básico ao Avançado. Fale com a liderança para se inscrever.</p>
-          <a href="https://www.admsasp.com.br/teologiaeetad">Conhecer o curso na ADMSASP</a>
-        </article>
       </div>
     </div>
   </section>
@@ -643,7 +639,7 @@ p { margin: 0; }
         <a class="tile arte ouro reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Culto da família, domingo às 18h. Ver no Instagram">
           <span class="r">Culto da família</span>
           <span class="grande-hora">Domingo, 18h</span>
-          <span class="body-sm">Venha com quem você ama.</span>
+          <span class="body-sm">Venha como você está.</span>
         </a>
         <a data-ig class="tile reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Bíblia aberta no culto. Ver no Instagram">
           <img src="img/feed-4.jpg" alt="" loading="lazy">
@@ -656,6 +652,10 @@ p { margin: 0; }
         <a class="tile arte marinho reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Lugar de encontro com Deus. Ver no Instagram">
           <span class="t">Lugar de encontro com Deus</span>
           <span class="r">@admpeniel.sp</span>
+        </a>
+        <a data-ig class="tile reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Campanha de quinta. Ver no Instagram">
+          <img src="img/quinta-3.jpg" alt="" loading="lazy">
+          <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
       </div>
     </div>
@@ -705,6 +705,28 @@ p { margin: 0; }
       </div>
     </div>
   </section>
+
+  <section class="section" id="eetad" aria-labelledby="eetad-title">
+    <div class="wrap eetad">
+      <div class="eetad-texto reveal">
+        <p class="label" style="color: var(--accent-text)">Teologia</p>
+        <h2 class="display-lg" id="eetad-title">Estude teologia na EETAD</h2>
+        <p class="muted">A ADMSASP, nossa sede em Santo André, é um núcleo ativo da EETAD (Escola de Educação Teológica das Assembleias de Deus), com cursos do Básico ao Avançado e compromisso com a sã doutrina.</p>
+        <a href="https://www.admsasp.com.br/teologiaeetad" target="_blank" rel="noopener">Conhecer o curso no site da ADMSASP</a>
+      </div>
+      <div class="card eetad-card reveal d1">
+        <span class="label" style="color: var(--accent-text)">Aulas</span>
+        <p class="subheading">Sexta, 19h30 · Na sede, em Santo André</p>
+        <p class="muted body-sm">Rua Juquiá, 480 · Vila Eldizia, Santo André – SP</p>
+        <hr>
+        <span class="label" style="color: var(--accent-text)">Inscrições</span>
+        <p class="body-sm muted">Escreva para a secretaria da sede:</p>
+        <p class="email">secretariaadmsasp@gmail.com</p>
+        <a class="btn btn-primary" href="mailto:secretariaadmsasp@gmail.com?subject=Inscri%C3%A7%C3%A3o%20na%20EETAD"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Enviar e-mail</a>
+      </div>
+    </div>
+  </section>
+
 
   <section class="versiculo-final on-dark" aria-label="Versículo">
     <img src="img/encontro.jpg" alt="" loading="lazy">
@@ -964,7 +986,7 @@ p { margin: 0; }
     copia('Rua Bicudo de Brito, 67 - Vila Guarani, São Paulo - SP, CEP 04316-060', document.getElementById('toast'), 'Endereço copiado.', document.getElementById('endereco'));
   });
   document.getElementById('compartilhar').addEventListener('click', function () {
-    copia('Oi! Passando para convidar você para estar com a gente na ADM Peniel. Cultos: Domingo, 18h (Culto da família) · Terça, 19h30 (Oração e ensino) · Quinta, 19h30 (Campanha). Rua Bicudo de Brito, 67, Vila Guarani, São Paulo. Venha com quem você ama. admpeniel.com.br', document.getElementById('toast-convite'), 'Convite copiado. Cole no WhatsApp de quem você quer convidar.', null);
+    copia('Oi! Passando para convidar você para estar com a gente na ADM Peniel. Cultos: Domingo, 18h (Culto da família) · Terça, 19h30 (Oração e ensino) · Quinta, 19h30 (Campanha). Rua Bicudo de Brito, 67, Vila Guarani, São Paulo. Venha como você está. admpeniel.com.br', document.getElementById('toast-convite'), 'Convite copiado. Cole no WhatsApp de quem você quer convidar.', null);
   });
 })();
 </script>
