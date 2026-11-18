@@ -280,6 +280,10 @@ p { margin: 0; }
 .mapa-cartao span:not(.mapa-pin) { color: var(--ink-muted); font-size: 14px; line-height: 20px; }
 .mapa-pin { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; flex: none; }
 .mapa-pin svg { width: 20px; height: 20px; }
+.criancas { display: flex; align-items: center; gap: 14px; margin: 0; font-size: 15px; line-height: 24px; color: var(--ink-muted); }
+.criancas strong { color: var(--ink); }
+.criancas-icone { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--on-gold); display: grid; place-items: center; flex: none; }
+.criancas-icone svg { width: 22px; height: 22px; }
 /* Convite junto dos cultos */
 .convidar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface-raised); }
 .convidar p:first-child { flex: 1 1 280px; min-width: 0; }
@@ -544,6 +548,7 @@ p { margin: 0; }
           </div>
         </article>
         </div>
+        <p class="criancas"><span class="criancas-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="3"/><path d="M8 21v-5l-2-3 3-3h6l3 3-2 3v5"/><path d="M10 21v-4M14 21v-4"/></svg></span><span><strong>Ministério infantil.</strong> Vem com crianças? Durante os cultos, elas podem ficar com você ou ir para a salinha infantil, onde também aprendem a Palavra.</span></p>
         <div class="convidar">
           <p><strong>Convide alguém para vir com você.</strong> Copie o convite com os horários e cole no WhatsApp.</p>
           <button class="btn btn-secondary" id="compartilhar" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg> Copiar convite</button>
