@@ -1,0 +1,8 @@
+{
+  // Site estático da ADM Peniel, publicado pelo Cloudflare Workers (assets).
+  "name": "site",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./"
+  }
+}
