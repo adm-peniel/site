@@ -1002,7 +1002,7 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
     try { navigator.clipboard.writeText(texto).then(function () { alvo.textContent = ok; }, fallback); } catch (e) { fallback(); }
   }
   document.getElementById('copiar').addEventListener('click', function () {
-    copia('Rua Bicudo de Brito, 67 - Vila Guarani, São Paulo - SP, CEP 04316-060', document.getElementById('toast'), 'Endereço copiado.', document.getElementById('endereco'));
+    copia("ADM Peniel · Assembleia de Deus\nRua Bicudo de Brito, 67 – Vila Guarani, São Paulo – SP, CEP 04316-060\nEm frente ao Clube Vila Guarani", document.getElementById('toast'), 'Endereço copiado.', document.getElementById('endereco'));
   });
   document.getElementById('enviar-email').addEventListener('click', function () {
     var toast = document.getElementById('toast-email');
