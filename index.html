@@ -786,7 +786,7 @@ p { margin: 0; }
         </ul>
       </div>
     </div>
-    <p class="footer-base">Assembleia de Deus – Ministério de Missões, Congregação Peniel. Congregação ligada à ADMSASP, Santo André (SP). admpeniel.com.br</p>
+    <p class="footer-base">© <span id="ano">2026</span> ADM Peniel. Todos os direitos reservados.</p>
   </div>
 </footer>
 
@@ -986,6 +986,8 @@ p { margin: 0; }
       return (tam && tam.mediaUrl) || (p.mediaType === 'VIDEO' ? p.thumbnailUrl : p.mediaUrl) || p.thumbnailUrl || '';
     }
   })();
+  var ano = document.getElementById('ano'); if (ano) ano.textContent = new Date().getFullYear();
+
   // Copiar textos
   function copia(texto, alvo, ok, fallbackEl) {
     function fallback() {
