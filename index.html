@@ -358,6 +358,8 @@ p { margin: 0; }
 .tile.arte.ouro .r { color: var(--navy); }
 .tile.arte .grande-hora { font-weight: 800; font-size: clamp(28px, 4vw, 44px); line-height: 1; }
 
+.tile .reel { position: absolute; top: 8px; right: 8px; z-index: 2; width: 26px; height: 26px; border-radius: 50%; background: rgba(3,20,51,.65); color: #fff; display: grid; place-items: center; }
+.tile .reel svg { width: 14px; height: 14px; }
 /* Família de igrejas */
 .familia { background: var(--surface-brand); color: var(--on-brand); position: relative; overflow: hidden; }
 .chama-ampliada {
@@ -594,7 +596,7 @@ p { margin: 0; }
         </div>
       </div>
       <div class="mosaico">
-        <a class="tile grande reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Louvor na ADM Peniel. Ver no Instagram">
+        <a data-ig class="tile grande reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Louvor na ADM Peniel. Ver no Instagram">
           <img src="img/feed-1.jpg" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
@@ -602,11 +604,11 @@ p { margin: 0; }
           <span class="t">“E conhecereis a verdade, e a verdade vos libertará.”</span>
           <span class="r">João 8.32 (ARC)</span>
         </a>
-        <a class="tile reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Pregação da Palavra. Ver no Instagram">
+        <a data-ig class="tile reveal d2" href="https://www.instagram.com/admpeniel.sp/" aria-label="Pregação da Palavra. Ver no Instagram">
           <img src="img/feed-2.jpg" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
-        <a class="tile reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Adoração no culto. Ver no Instagram">
+        <a data-ig class="tile reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Adoração no culto. Ver no Instagram">
           <img src="img/feed-3.jpg" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
@@ -615,11 +617,11 @@ p { margin: 0; }
           <span class="grande-hora">Domingo, 18h</span>
           <span class="body-sm">Venha com quem você ama.</span>
         </a>
-        <a class="tile reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Bíblia aberta no culto. Ver no Instagram">
+        <a data-ig class="tile reveal" href="https://www.instagram.com/admpeniel.sp/" aria-label="Bíblia aberta no culto. Ver no Instagram">
           <img src="img/feed-4.jpg" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
-        <a class="tile reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Congregação reunida. Ver no Instagram">
+        <a data-ig class="tile reveal d1" href="https://www.instagram.com/admpeniel.sp/" aria-label="Congregação reunida. Ver no Instagram">
           <img src="img/feed-5.jpg" alt="" loading="lazy">
           <span class="sobre"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>Ver no Instagram</span></span>
         </a>
@@ -905,6 +907,45 @@ p { margin: 0; }
       }, n * 600);
     });
   }
+
+  // Instagram: troca as fotos do mosaico pelos posts mais recentes (feed do Behold)
+  (function () {
+    var tiles = document.querySelectorAll('.mosaico [data-ig]');
+    if (!tiles.length || !window.fetch) return;
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 8000);
+    fetch('https://feeds.behold.so/XJCCcJ6VhtaKhKrrjjIc', ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) {
+        clearTimeout(timer);
+        var posts = (Array.isArray(data) ? data : (data && data.posts) || []).filter(function (p) {
+          return p && p.permalink && imagem(p);
+        });
+        Array.prototype.forEach.call(tiles, function (tile, i) {
+          var p = posts[i]; if (!p) return;
+          var img = tile.querySelector('img');
+          var url = imagem(p, tile.classList.contains('grande'));
+          var novo = new Image();
+          novo.onload = function () {
+            img.src = url;
+            tile.href = p.permalink;
+            var texto = (p.prunedCaption || p.caption || '').replace(/\s+/g, ' ').trim();
+            if (texto.length > 120) texto = texto.slice(0, 117) + '…';
+            tile.setAttribute('aria-label', (texto ? texto + '. ' : 'Post da ADM Peniel. ') + 'Ver no Instagram');
+            if (p.mediaType === 'VIDEO' && !tile.querySelector('.reel')) {
+              tile.insertAdjacentHTML('beforeend', '<span class="reel" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>');
+            }
+          };
+          novo.src = url;
+        });
+      })
+      .catch(function () { /* sem conexão com o feed: mantém as fotos atuais */ });
+    function imagem(p, grande) {
+      var s = p.sizes || {};
+      var tam = grande ? (s.large || s.medium) : (s.medium || s.small);
+      return (tam && tam.mediaUrl) || (p.mediaType === 'VIDEO' ? p.thumbnailUrl : p.mediaUrl) || p.thumbnailUrl || '';
+    }
+  })();
   // Copiar textos
   function copia(texto, alvo, ok, fallbackEl) {
     function fallback() {
