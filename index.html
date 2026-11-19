@@ -185,20 +185,23 @@ p { margin: 0; }
 .btn-secondary:hover { background: var(--surface-sunken); }
 .btn svg { width: 18px; height: 18px; flex: none; }
 
-/* Abertura em foto */
-.hero { position: relative; color: var(--on-brand); background: var(--navy-deep); overflow: hidden; isolation: isolate; }
-.hero-foto { position: absolute; inset: 0; z-index: -2; }
-.hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transform-origin: 60% 40%; }
-.js-motion .hero-foto img { animation: aproxima 18s var(--ease) both; }
-@keyframes aproxima { from { transform: scale(1.12); } to { transform: scale(1); } }
-.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(3,20,51,.9) 0%, rgba(3,20,51,.78) 45%, rgba(3,20,51,.45) 100%); }
-.hero .wrap { padding-block: clamp(64px, 11vw, 136px) clamp(56px, 8vw, 104px); display: grid; gap: 26px; }
-.hero .eyebrow { color: var(--flame-gold); }
-.hero h1 { max-width: 13ch; }
-.hero h1 .w { display: inline-block; }
-.js-motion .hero h1 .w { animation: sobe 900ms var(--ease) both; }
-@keyframes sobe { from { transform: translateY(0.5em); opacity: 0; } to { transform: none; opacity: 1; } }
-.hero .lead { font-size: 18px; line-height: 30px; color: var(--on-brand-muted); max-width: 52ch; }
+/* Abertura */
+.hero { position: relative; color: var(--on-brand); background: var(--navy-deep); overflow: hidden; display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr); align-items: center; gap: clamp(32px,5vw,72px); padding: clamp(48px,7vw,96px) max(24px, calc((100% - 1160px) / 2)); }
+.hero .wrap { padding: 0; width: auto; margin: 0; max-width: none; display: grid; gap: 22px; }
+.hero-janela { position: relative; order: 2; aspect-ratio: 4 / 5; width: 100%; max-width: 440px; max-height: 72vh; justify-self: center; border-radius: 28px; overflow: hidden; background: var(--surface-brand); box-shadow: 18px 18px 0 0 var(--flame-gold), 0 30px 60px rgba(0,0,0,.45); }
+.hero-janela img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; }
+.hero-janela img.on { opacity: 1; }
+.js-motion .hero-janela img.on { animation: lento 7s linear both; }
+@keyframes lento { from { transform: scale(1.06); } to { transform: scale(1); } }
+.ola { margin: 0; font-weight: 700; font-size: 18px; color: var(--flame-gold); }
+.hero-h1 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.15; max-width: 18ch; text-wrap: balance; }
+.js-motion .hero .wrap > * { animation: sobe 900ms var(--ease) both; }
+.js-motion .hero .wrap > :nth-child(2) { animation-delay: .1s; }
+.js-motion .hero .wrap > :nth-child(3) { animation-delay: .2s; }
+.js-motion .hero .wrap > :nth-child(n+4) { animation-delay: .3s; }
+@keyframes sobe { from { transform: translateY(16px); opacity: 0; } to { transform: none; opacity: 1; } }
+.hero .slogan { margin: 0; font-size: 19px; line-height: 28px; color: var(--on-brand-muted); }
+.hero .slogan strong { color: var(--on-brand); }
 .hero .acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 .proximo { display: inline-flex; align-items: center; gap: 12px; justify-self: start; background: rgba(3,20,51,.6); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-pill); padding: 8px 18px 8px 10px; backdrop-filter: blur(6px); }
 .proximo .ponto { width: 10px; height: 10px; border-radius: 50%; background: var(--flame-gold); box-shadow: 0 0 0 0 rgba(254,186,10,.6); flex: none; margin-left: 6px; }
@@ -207,14 +210,14 @@ p { margin: 0; }
 .proximo .txt { display: grid; line-height: 18px; }
 .proximo .txt small { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--flame-gold); }
 .proximo .txt span { font-weight: 600; font-size: 15px; }
-.rolar { position: absolute; left: 50%; bottom: 18px; translate: -50% 0; color: var(--on-brand-muted); }
-.js-motion .rolar { animation: desce 2.4s var(--ease) infinite; }
-@keyframes desce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
-@media (max-width: 640px) {
-  .hero::after { background: linear-gradient(180deg, rgba(3,20,51,.5) 0%, rgba(3,20,51,.72) 45%, rgba(3,20,51,.92) 100%); }
-  .hero-foto img { object-position: 70% 40%; }
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding: 0; gap: 0; }
+  .hero-janela { order: -1; aspect-ratio: auto; height: 46vh; min-height: 300px; max-height: none; max-width: none; border-radius: 0; box-shadow: none; }
+  .hero-janela::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(3,20,51,0) 55%, var(--navy-deep) 100%); }
+  .hero .wrap { position: relative; padding: 0 24px 40px; margin-top: -44px; gap: 16px; }
+  .hero-h1 { font-size: 30px; }
+  .hero .slogan { font-size: 17px; }
   .hero .acoes .btn { flex: 1 1 100%; }
-  .rolar { display: none; }
 }
 
 /* Letreiro dos valores */
@@ -421,7 +424,7 @@ p { margin: 0; }
 .convite .dentro { padding: clamp(32px, 6vw, 72px); display: grid; gap: 16px; max-width: 640px; }
 .convite .muted { color: var(--on-brand-muted); }
 
-@media (max-width: 640px) { .so-desktop { display: none; } .hero .eyebrow { font-size: 12px; letter-spacing: .03em; } }
+@media (max-width: 640px) { .so-desktop { display: none; } }
 .nota-google { display: inline-flex; align-items: center; gap: 10px; justify-self: start; color: var(--ink); text-decoration: none; font-size: 14px; }
 .nota-google:hover span:last-child { text-decoration: underline; }
 .nota-google .estrelas { display: inline-flex; gap: 2px; color: var(--flame-gold); }
@@ -493,11 +496,11 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
 
 <main id="inicio">
   <section class="hero on-dark" aria-labelledby="hero-title">
-    <div class="hero-foto"><img src="img/hero.webp" srcset="img/hero-900.webp 900w, img/hero.webp 1600w" sizes="100vw" alt="" fetchpriority="high"></div>
+    <div class="hero-janela" aria-hidden="true"><img src="img/abertura-1.webp" srcset="img/abertura-1-800.webp 800w, img/abertura-1.webp 1200w" sizes="(max-width: 860px) 100vw, 440px" alt="" style="object-position:50% 22%" class="on" fetchpriority="high"><img src="img/abertura-2.webp" srcset="img/abertura-2-800.webp 800w, img/abertura-2.webp 1200w" sizes="(max-width: 860px) 100vw, 440px" alt="" style="object-position:50% 35%" loading="lazy"><img src="img/abertura-3.webp" srcset="img/abertura-3-800.webp 800w, img/abertura-3.webp 1200w" sizes="(max-width: 860px) 100vw, 440px" alt="" style="object-position:50% 22%" loading="lazy"><img src="img/abertura-4.webp" srcset="img/abertura-4-800.webp 800w, img/abertura-4.webp 1200w" sizes="(max-width: 860px) 100vw, 440px" alt="" style="object-position:50% 25%" loading="lazy"><img src="img/abertura-5.webp" srcset="img/abertura-5-800.webp 800w, img/abertura-5.webp 1200w" sizes="(max-width: 860px) 100vw, 440px" alt="" style="object-position:50% 25%" loading="lazy"></div>
     <div class="wrap">
-      <p class="label eyebrow">Assembleia de Deus – Ministério de Missões<span class="so-desktop"> · Congregação Peniel</span></p>
-      <h1 class="display-xl" id="hero-title"><span class="w" style="animation-delay:.05s">Lugar</span> <span class="w" style="animation-delay:.15s">de</span> <span class="w" style="animation-delay:.25s">encontro</span> <span class="w" style="animation-delay:.4s">com</span> <span class="w" style="animation-delay:.5s">Deus</span></h1>
-      <p class="lead">Somos uma congregação dedicada ao ensino fiel à Palavra de Deus. Vem fazer parte da nossa grande família em Cristo!</p>
+      <p class="ola">Que bom ter você aqui <span aria-hidden="true">👋</span></p>
+      <h1 class="hero-h1" id="hero-title">Somos uma igreja que ama a Palavra e recebe você como família</h1>
+      <p class="lead slogan"><strong>ADM Peniel</strong>, lugar de encontro com Deus</p>
       <div class="proximo" aria-live="polite">
         <span class="ponto" aria-hidden="true"></span>
         <span class="txt"><small id="prox-rotulo">Cultos</small><span id="prox-texto">Domingo 18h · Terça 19h30 · Quinta 19h30</span></span>
@@ -509,7 +512,6 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
         </a>
       </div>
     </div>
-    <svg class="rolar" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
   </section>
 
   <div class="letreiro" id="letreiro" role="button" tabindex="0" aria-pressed="false" aria-label="Esperamos você. Vem! Toque para pausar a faixa animada">
@@ -911,6 +913,20 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
       }, n * 600);
     });
   }
+
+
+  // Abertura: troca as fotos a cada 3,5 s (pausa se o usuário prefere menos movimento)
+  (function () {
+    var fotos = document.querySelectorAll('.hero-janela img');
+    if (fotos.length < 2 || (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    var k = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      fotos[k].classList.remove('on');
+      k = (k + 1) % fotos.length;
+      var f = fotos[k]; f.loading = 'eager'; void f.offsetWidth; f.classList.add('on');
+    }, 3500);
+  })();
 
   // Instagram: troca as fotos do mosaico pelos posts mais recentes (feed do Behold)
   (function () {
