@@ -351,7 +351,7 @@ p { margin: 0; }
 .ig-handle { color: var(--accent-text); font-weight: 800; text-decoration: underline; text-underline-offset: 3px; }
 .mosaico { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
 @media (max-width: 760px) { .mosaico { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.tile { position: relative; aspect-ratio: 3 / 4; max-width: 100%; overflow: hidden; border-radius: 4px; display: block; color: var(--on-brand); text-decoration: none; background: var(--surface-brand); }
+.tile { position: relative; aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; border-radius: 4px; display: block; color: var(--on-brand); text-decoration: none; background: var(--surface-brand); }
 .tile.grande { grid-column: span 2; grid-row: span 2; }
 .tile img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform 600ms var(--ease); }
 .tile::after { content: ""; position: absolute; inset: 0; background: var(--scrim); opacity: 0; transition: opacity 250ms; }
