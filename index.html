@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Fachada da ADM Peniel, com o letreiro azul e a chama nas duas pontas.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Church", "Organization"], "name": "ADM Peniel", "alternateName": "Assembleia de Deus – Ministério de Missões, Congregação Peniel", "description": "Lugar de encontro com Deus. Congregação da Assembleia de Deus – Ministério de Missões na Vila Guarani, São Paulo.", "url": "https://admpeniel.com.br/", "image": "https://admpeniel.com.br/img/og-fachada.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Rua Bicudo de Brito, 67 – Vila Guarani", "addressLocality": "São Paulo", "addressRegion": "SP", "postalCode": "04316-060", "addressCountry": "BR"}, "geo": {"@type": "GeoCoordinates", "latitude": -23.6390675, "longitude": -46.6376989}, "hasMap": "https://maps.google.com/?cid=11050011844465574052", "sameAs": ["https://www.instagram.com/admpeniel.sp/", "https://www.tiktok.com/@admpeniel.sp", "https://www.facebook.com/admpeniel.sp"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "18:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Tuesday", "opens": "19:30", "closes": "21:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Thursday", "opens": "19:30", "closes": "21:30"}], "parentOrganization": {"@type": "Church", "name": "Assembleia de Deus – Ministério de Missões em Santo André (ADMSASP)", "url": "https://www.admsasp.com.br/"}, "logo": "https://admpeniel.com.br/icon-192.png"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Church", "Organization"], "name": "ADM Peniel", "alternateName": "Assembleia de Deus – Ministério de Missões, Congregação Peniel", "description": "Lugar de encontro com Deus. Congregação da Assembleia de Deus – Ministério de Missões na Vila Guarani, São Paulo.", "url": "https://admpeniel.com.br/", "image": "https://admpeniel.com.br/img/og-fachada.jpg", "address": {"@type": "PostalAddress", "streetAddress": "Rua Bicudo de Brito, 67 – Vila Guarani", "addressLocality": "São Paulo", "addressRegion": "SP", "postalCode": "04316-060", "addressCountry": "BR"}, "geo": {"@type": "GeoCoordinates", "latitude": -23.6390675, "longitude": -46.6376989}, "hasMap": "https://maps.google.com/?cid=11050011844465574052", "sameAs": ["https://www.instagram.com/admpeniel.sp/", "https://www.tiktok.com/@admpeniel.sp", "https://www.facebook.com/admpeniel.sp"], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "18:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Tuesday", "opens": "19:30", "closes": "21:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Thursday", "opens": "19:30", "closes": "21:30"}], "parentOrganization": {"@type": "Church", "name": "Assembleia de Deus – Ministério de Missões em Santo André (ADMSASP)", "url": "https://www.admsasp.com.br/"}, "logo": "https://admpeniel.com.br/icon-192.png", "email": "contato@admpeniel.com.br"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap">
@@ -445,8 +445,9 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
 .site-footer { background: var(--surface-brand-deep); color: var(--on-brand); }
 .site-footer .wrap { padding-block: 52px 36px; display: grid; gap: 32px; }
 .footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-start; }
-.footer-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.footer-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 @media (max-width: 760px) { .footer-cols { grid-template-columns: 1fr; } }
+.footer-email { color: var(--on-brand); font-weight: 600; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .footer-cols h3 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--flame-gold); margin-bottom: 8px; }
 .footer-cols p, .footer-cols li { color: var(--on-brand-muted); font-size: 14px; line-height: 22px; }
 .footer-cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
@@ -750,6 +751,10 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
       <div>
         <h3>Endereço</h3>
         <p>Rua Bicudo de Brito, 67<br>Vila Guarani, São Paulo – SP<br>CEP <span>04316</span><span>-060</span></p>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p><a class="footer-email" href="mailto:contato@admpeniel.com.br">contato@admpeniel.com.br</a></p>
       </div>
     </div>
     <p class="footer-base">ADM Peniel · Igreja evangélica Assembleia de Deus na Vila Guarani, zona sul de São Paulo.<br>© <span id="ano">2026</span> ADM Peniel. Todos os direitos reservados.</p>
