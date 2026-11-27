@@ -952,6 +952,7 @@ a[x-apple-data-detectors], a[href^="tel:"] { color: inherit !important; text-dec
           var url = imagem(p, tile.classList.contains('grande'));
           var novo = new Image();
           novo.onload = function () {
+            img.removeAttribute('srcset'); img.removeAttribute('sizes');
             img.src = url;
             tile.href = p.permalink;
             var texto = (p.prunedCaption || p.caption || '').replace(/\s+/g, ' ').trim();
